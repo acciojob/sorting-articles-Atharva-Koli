@@ -22,8 +22,4 @@ bands.sort((a, b) => strip(a).localeCompare(strip(b)));
 
 const ul = document.getElementById('band');
 
-bands.forEach(band => {
-  const li = document.createElement('li');
-  li.textContent = band;
-  ul.appendChild(li);
-});
+ul.innerHTML = bands.map(band => `<li>${band}</li>`).join('');
