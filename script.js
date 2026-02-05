@@ -17,17 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   function strip(name) {
-    return name.replace(/^(a |an |the )/i, '').trim();
-  }
+  return name.replace(/^(a |an |the )/i, '').trim();
+}
 
-  bands.sort((a, b) => strip(a).localeCompare(strip(b)));
+bands.sort((a, b) => strip(a).localeCompare(strip(b)));
 
-  const ul = document.getElementById('band');
-
-  bands.forEach(band => {
-    const li = document.createElement('li');
-    li.textContent = band;
-    ul.appendChild(li);
-  });
-
-});
+document.getElementById('band').innerHTML =
+  bands.map(band => `<li>${band}</li>`).join('');
