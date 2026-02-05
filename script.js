@@ -1,25 +1,12 @@
-const bands = [
-  'The Plot in You',
-  'The Devil Wears Prada',
-  'Pierce the Veil',
-  'Norma Jean',
-  'The Bled',
-  'Say Anything',
-  'The Midway State',
-  'We Came as Romans',
-  'Counterparts',
-  'Oh, Sleeper',
-  'A Skylit Drive',
-  'Anywhere But Here',
-  'An Old Dog'
-];
+const ul = document.querySelector('#band');
+const lis = Array.from(ul.querySelectorAll('li'));
 
 function strip(name) {
   return name.replace(/^(a |an |the )/i, '').trim();
 }
 
-bands.sort((a, b) => strip(a).localeCompare(strip(b)));
-
-const ul = document.getElementById('band');
-
-ul.innerHTML = bands.map(band => `<li>${band}</li>`).join('');
+lis
+  .sort((a, b) =>
+    strip(a.textContent).localeCompare(strip(b.textContent))
+  )
+  .forEach(li => ul.appendChild(li));

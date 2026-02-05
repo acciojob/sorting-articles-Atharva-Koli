@@ -1,10 +1,9 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #e8e6df;   /* soft beige like screenshot */
+  background: #e8e6df;
 }
 
-/* center panel */
 .wrapper {
   width: 60%;
   margin: 40px auto;
@@ -12,7 +11,6 @@ body {
   box-shadow: 0 0 0 1px #ddd;
 }
 
-/* remove default spacing */
 ul {
   margin: 0;
   padding: 0;
@@ -20,14 +18,12 @@ ul {
   list-style-position: inside;
 }
 
-/* each row */
 li {
   padding: 20px 25px;
   border-bottom: 1px solid #dcdcdc;
   font-size: 18px;
 }
 
-/* remove last border */
 li:last-child {
   border-bottom: none;
 }
